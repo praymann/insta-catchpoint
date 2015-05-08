@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+
+require "bundler/setup"
 require 'insta-catchpoint'
 
-InstaCatchpoint::Runner.new(ARGV)
+InstaCatchpoint::Runner.start(ARGV)
