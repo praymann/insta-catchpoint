@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'insta-catchpoint'
+
+InstaCatchpoint::Runner.new(ARGV)

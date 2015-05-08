@@ -1,13 +1,13 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'catchpoint/api/version'
+require 'insta-catchpoint/ver/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "catchpoint-api"
-  spec.version       = Catchpoint::Api::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
+  spec.name          = "insta-catchpoint"
+  spec.version       = InstaCatchpoint::VERSION
+  spec.authors       = ["Dan Pramann"]
+  spec.email         = ["dpramann@lakana.com"]
 
   spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}

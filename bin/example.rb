@@ -3,8 +3,6 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'pp'
-require_relative 'configurator'
-require_relative 'catchpoint'
 
 conf       = Configurator.load()
 catchpoint = Catchpoint.new(conf)
