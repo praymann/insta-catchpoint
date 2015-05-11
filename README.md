@@ -2,7 +2,7 @@
 
 A simple ruby CLI which enables the quick creation of tests on a given $website when using Catchpoint.
 
-ie. Given www.google.com, created an Object (HTTP) test and a Emluated (Browser) test defined by a set of defaults.
+ie. Given www.google.com, create an Object (HTTP) test and a Emluated (Browser) test defined by a set of defaults.
 
 Leverages Catchpoint Pull API with Oauth.
 

@@ -7,13 +7,13 @@ module InstaCatchpoint
     
     desc "pull WEBSITE", "Pull down any tests for WEBSITE"
     def pull(website)
-        this = Backend.new()
+        this = Backend.new
         log("API Get tests for #{website}")
-        this.get_tests(website)
+        this.pull(website)
     end
     desc "add WEBSITE", "Add default tests for WEBSITE"
     def add(website)
-        this = Backend.new()
+        this = Backend.new
         log("API Add tests for #{website}")
         this.add(website)
     end

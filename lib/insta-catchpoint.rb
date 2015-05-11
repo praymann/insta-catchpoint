@@ -8,8 +8,6 @@ require "insta-catchpoint/api"
 require "insta-catchpoint/backend"
 # CLI class ( Thor )
 require "insta-catchpoint/runner"
-
-###  Modules
-# Method to pull in configurations
+# Class to pull in configurations
 require "insta-catchpoint/configurator"
 
