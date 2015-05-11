@@ -78,7 +78,32 @@ module InstaCatchpoint
         rescue Timeout::Error => e
           puts "Possible HTTP Timeout issue"
         end
+      end
+      
+      def put endpoint
+      
+        # remove preceeding slash
+        endpoint.gsub!(/^\//, '')
+        
+        fetch_token
+
+        uri  = api_uri(endpoint)
+
+        http = Net::HTTP.new(uri.host, uri.port)
+
+        http.use_ssl = true
+        
+        begin
+        
+          res = http.get(uri.path, headers)
           
+          return JSON.parse(res.body)
+          
+        rescue TypeError
+          puts "Empty JSON Response from Catchpoint? Can't convert nil to String"
+        rescue Timeout::Error => e
+          puts "Possible HTTP Timeout issue"
+        end
       end
     end
 end

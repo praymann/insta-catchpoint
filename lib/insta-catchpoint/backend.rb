@@ -2,7 +2,7 @@ module InstaCatchpoint
   class Backend
     def initialize
       @conf = Configurator.load()
-       @catchpoint = Api.new(@conf)
+      @catchpoint = Api.new(@conf)
     end
     def get_tests(website)
       puts @catchpoint.get("tests")["items"]
