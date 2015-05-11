@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'thor'
-#require 'pp'
 
 module InstaCatchpoint
   class Runner < Thor    
@@ -8,14 +7,17 @@ module InstaCatchpoint
     
     desc "pull WEBSITE", "Pull down any tests for WEBSITE"
     def pull(website)
-        Backend.load_config
+        Backend.new()
         Backend.create
         log("API Get tests for #{website}")
-        Backend.get_tests
+        Backend.get_tests(website)
     end
     desc "add WEBSITE", "Add default tests for WEBSITE"
     def add(website)
+        Backend.load_config
+        Backend.create
         log("API Add tests for #{website}")
+        Backend.add
     end
     
     no_commands do
@@ -23,24 +25,5 @@ module InstaCatchpoint
         puts str if options[:verbose]
       end
     end
-  end
-  
-  module Backend
-    def self.load_config
-      @conf = Configurator.load()
-    end
-    def self.create
-      @catchpoint = Api.new(@conf)
-    end
-    def self.get_tests
-      puts @catchpoint.get("tests")["items"]
-    end
-
-## Examples
-# nodes = catchpoint.get("nodes")["items"]
-# tests = catchpoint.get("tests")["items"]
-#
-# pp tests.select { |a| a["name"] == "WebC4 Random List Single Object" }
-
   end
 end
