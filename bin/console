@@ -10,5 +10,10 @@ require "insta-catchpoint"
 # require "pry"
 # Pry.start
 
+@config = InstaCatchpoint::Configurator.load()
+@api = InstaCatchpoint::Api.new(@config)
+
 require "irb"
+
+
 IRB.start

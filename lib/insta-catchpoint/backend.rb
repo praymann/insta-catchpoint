@@ -8,9 +8,9 @@ module InstaCatchpoint
       @catchpoint.get("tests")["items"]
     end
     
-    def create_test()
+    def create_test
     
-    
+    end
 
 ## Examples
 # nodes = catchpoint.get("nodes")["items"]
