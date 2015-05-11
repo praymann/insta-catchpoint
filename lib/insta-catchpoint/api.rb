@@ -95,9 +95,7 @@ module InstaCatchpoint
         
         begin
         
-          res = http.get(uri.path, headers)
-          
-          return JSON.parse(res.body)
+          res = http.post(uri.path, post_data)
           
         rescue TypeError
           puts "Empty JSON Response from Catchpoint? Can't convert nil to String"
