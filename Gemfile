@@ -5,3 +5,4 @@ gemspec
 gem 'prettyprint'
 gem 'thor'
 gem 'json'
+gem 'dish'

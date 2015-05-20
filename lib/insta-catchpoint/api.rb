@@ -68,12 +68,10 @@ module InstaCatchpoint
         http.use_ssl = true
         
         begin
-        
           res = http.get(uri.path, headers)
           return JSON.parse(res.body) unless res.code == '403'
             puts "HTTP 403 received: #{res.body}"
             exit
-          
         rescue TypeError
           puts "Empty JSON Response from Catchpoint? Can't convert nil to String"
         rescue Timeout::Error => e
