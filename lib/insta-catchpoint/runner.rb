@@ -5,7 +5,7 @@ module InstaCatchpoint
   class Runner < Thor    
     class_option :verbose, :type => :boolean
     
-    desc "pull IDENTIFIER STYLE", "Pull test that matches/contains/is; output in json, hash, human"
+    desc "pull [IDENTIFIER] [STYLE]", "Pull test that matches/contains/is; output in json, hash, human"
     def pull(identifier, style)
       identifier.chomp
       style.chomp
@@ -27,7 +27,7 @@ module InstaCatchpoint
       end
     end
     
-    desc "pullall STYLE", "Pull down ALL tests in Catchpoint; output in json, hash, human"
+    desc "pullall [STYLE]", "Pull down ALL tests in Catchpoint; output in json, hash, human"
     def pullall(style)
       style.chomp
       this = Backend.new
@@ -48,7 +48,7 @@ module InstaCatchpoint
       end
     end
     
-    desc "add WEBSITE", "Add defined default tests for WEBSITE"
+    desc "add [WEBSITE]", "Add defined default tests for WEBSITE"
     def add(website)
         this = Backend.new
         log("API - Add tests for #{website}")
